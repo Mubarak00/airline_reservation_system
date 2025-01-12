@@ -58,7 +58,10 @@ The database consists of the following tables:
 
 Each table contains **20 rows of sample data** for realistic simulation. The dataset is comprehensive, ensuring thorough testing and validation of all features.
 
-Example: 
+---
+
+## Queries:
+
 Insert a new flight:
 ```sql
 INSERT INTO flights (
@@ -75,3 +78,22 @@ VALUES (
         '2024-04-10 09:00:00', 
         '2024-04-10 17:00:00', 
         1100.00);
+
+
+Insert a new flight:
+```sql
+INSERT INTO flights (
+        aircraft_id, 
+        departure_airport_id, 
+        arrival_airport_id, 
+        departure_time, 
+        arrival_time, 
+        price)
+VALUES (
+        1, 
+        3, 
+        4, 
+        '2024-04-10 09:00:00', 
+        '2024-04-10 17:00:00', 
+        1100.00);
+
