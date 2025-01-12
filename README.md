@@ -6,10 +6,10 @@ This project is a SQL-based database for an Airline Reservation System designed 
 
 The database contains the following seven tables:
 
-	1.	**airports:** Stores airport details.
-	2.	**flights:** Contains flight information.
-	3.	**aircrafts:** Stores details about aircraft used in flights.
-	4.	**passengers:** Tracks passenger details.
-	5.	**bookings:** Contains booking information for flights.
-	6.	**tickets:** Tracks individual ticket purchases.
-	7.	**payments:** Manages payment transactions for tickets.
+	1.	airports: Stores airport details.
+	2.	flights: Contains flight information.
+	3.	aircrafts: Stores details about aircraft used in flights.
+	4.	passengers: Tracks passenger details.
+	5.	bookings: Contains booking information for flights.
+	6.	tickets: Tracks individual ticket purchases.
+	7.	payments: Manages payment transactions for tickets.
