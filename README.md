@@ -24,10 +24,9 @@ This project demonstrates key database management concepts such as relational mo
 2. [Features](#features)
 3. [Database Schema](#database-schema)
 4. [Data Population](#data-population)
-5. [Key Queries](#key-queries)
-6. [Setup Instructions](#setup-instructions)
-7. [Future Improvements](#future-improvements)
-8. [License](#license)
+5. [Setup Instructions](#setup-instructions)
+6. [Key Queries](#key-queries)
+
 
 ---
 
