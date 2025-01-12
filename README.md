@@ -59,19 +59,17 @@ Each table contains **20 rows of sample data** for realistic simulation. The dat
 
 ---
 
-## Set up Instruction
-
-	1. Clone the repository:
-
+## Setup Instructions:
+1. Clone the repository:
 	```sql
 	git clone https://github.com/your-username/airline-reservation-system.git
 	```
-	2. Import SQL Script: Use a SQL client like MySQL Workbench or pgAdmin to execute the provided airline_reservation.sql file.
-	3. Run Queries: Use the provided query scripts (queries.sql) to test and interact with the database.
+2. Import SQL Script: Use a SQL client like MySQL Workbench or pgAdmin to execute the provided airline_reservation.sql file.
+3. Run Queries: Use the provided query scripts (queries.sql) to test and interact with the database.
 
 ---
 
-## Queries 1:
+## Key Queries:
 
 Insert a new flight:
 ```sql
@@ -92,20 +90,19 @@ VALUES (
 
 ```
 
-## Queries 2:
 Update ticket price:
 ```sql
 UPDATE tickets 
 SET class = 'Business' WHERE ticket_id = 5;
 
 ```
-## Queries 3:
+
 Delete a passenger record:
 ```sql
 DELETE FROM passengers WHERE passenger_id = 20;
 
 ```
-## Queries 4:
+
 Calculate total revenue by flight:
 ```sql
 SELECT 
@@ -115,7 +112,7 @@ FROM payments
 GROUP BY flight_id;;
 
 ```
-## Queries 5:
+
 Find average price of Economy class tickets::
 ```sql
 SELECT 
@@ -124,7 +121,7 @@ FROM tickets
 WHERE class = 'Economy';;
 
 ```
-## Queries 6:
+
 List passengers with their booked flights:
 ```sql
 SELECT 
@@ -141,7 +138,7 @@ JOIN flights f
 
 ```
 
-## Queries 7:
+
 Create a view for all upcoming flights:
 ```sql
 CREATE VIEW upcoming_flights AS
@@ -153,7 +150,7 @@ FROM flights
 WHERE departure_time > NOW();;
 
 ```
-## Queries 8:
+
 Calculate total revenue for a given flight:
 ```sql
 CREATE PROCEDURE GetFlightRevenue(IN flight INT)
