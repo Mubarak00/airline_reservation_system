@@ -60,7 +60,19 @@ Each table contains **20 rows of sample data** for realistic simulation. The dat
 
 ---
 
-## Queries:
+## Set up Instruction
+
+	1. Clone the repository:
+
+	```sql
+	git clone https://github.com/your-username/airline-reservation-system.git
+	```
+	2. Import SQL Script: Use a SQL client like MySQL Workbench or pgAdmin to execute the provided airline_reservation.sql file.
+	3. Run Queries: Use the provided query scripts (queries.sql) to test and interact with the database.
+
+---
+
+## Queries 1:
 
 Insert a new flight:
 ```sql
@@ -81,23 +93,77 @@ VALUES (
 
 ```
 
-## Queries
-Insert a new flight:
+## Queries 2:
+Update ticket price:
 ```sql
-INSERT INTO flights (
-        aircraft_id, 
-        departure_airport_id, 
-        arrival_airport_id, 
-        departure_time, 
-        arrival_time, 
-        price)
-VALUES (
-        1, 
-        3, 
-        4, 
-        '2024-04-10 09:00:00', 
-        '2024-04-10 17:00:00', 
-        1100.00);
+UPDATE tickets 
+SET class = 'Business' WHERE ticket_id = 5;
+
+```
+## Queries 3:
+Delete a passenger record:
+```sql
+DELETE FROM passengers WHERE passenger_id = 20;
+
+```
+## Queries 4:
+Calculate total revenue by flight:
+```sql
+SELECT 
+    flight_id, 
+    SUM(amount_paid) AS total_revenue
+FROM payments
+GROUP BY flight_id;;
+
+```
+## Queries 5:
+Find average price of Economy class tickets::
+```sql
+SELECT 
+    AVG(price) AS avg_economy_price
+FROM tickets
+WHERE class = 'Economy';;
+
+```
+## Queries 6:
+List passengers with their booked flights:
+```sql
+SELECT 
+    p.first_name, 
+    p.last_name, 
+    f.departure_airport_id, 
+    f.arrival_airport_id, 
+    f.departure_time
+FROM passengers p
+JOIN bookings b 
+    ON p.passenger_id = b.passenger_id
+JOIN flights f 
+    ON b.flight_id = f.flight_id;;
 
 ```
 
+## Queries 7:
+Create a view for all upcoming flights:
+```sql
+CREATE VIEW upcoming_flights AS
+SELECT 
+    flight_id, 
+    departure_time, 
+    arrival_time, price
+FROM flights
+WHERE departure_time > NOW();;
+
+```
+## Queries 8:
+Calculate total revenue for a given flight:
+```sql
+CREATE PROCEDURE GetFlightRevenue(IN flight INT)
+BEGIN
+    SELECT SUM(amount_paid) AS revenue
+    FROM payments p
+    JOIN tickets t ON p.ticket_id = t.ticket_id
+    JOIN bookings b ON t.booking_id = b.booking_id
+    WHERE b.flight_id = flight;
+END;
+
+```
