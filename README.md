@@ -5,6 +5,7 @@ This project is a SQL-based database for an Airline Reservation System designed 
 # Database Schema
 
 The database contains the following seven tables:
+
 	1.	**airports:** Stores airport details.
 	2.	**flights:** Contains flight information.
 	3.	**aircrafts:** Stores details about aircraft used in flights.
