@@ -62,7 +62,7 @@ Each table contains **20 rows of sample data** for realistic simulation. The dat
 ## Setup Instructions:
 1. Clone the repository:
 	```sql
-	git clone https://github.com/your-username/airline-reservation-system.git
+	git clone https://github.com/Mubarak00/airline-reservation-system.git
 	```
 2. Import SQL Script: Use a SQL client like MySQL Workbench or pgAdmin to execute the provided airline_reservation.sql file.
 3. Run Queries: Use the provided query scripts (queries.sql) to test and interact with the database.
